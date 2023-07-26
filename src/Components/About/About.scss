@@ -1,0 +1,144 @@
+/* About.scss */
+
+.about-container {
+    background: #10101a;
+    color: #fff;
+    /* Set text color to white for better contrast */
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+        position: relative;
+        text-align: center;
+        margin-bottom: 20px;
+
+        h3 {
+            font-size: 24px;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            /* Ensure text appears above pseudo-elements */
+            display: inline-block;
+            /* To keep ::before and ::after on the same line */
+            padding: 0 10px;
+            /* Add some padding for visual spacing */
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                right: 0;
+                width: 60px;
+                background: #2fbf71;
+                height: 1px;
+            }
+
+            &::after {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                position: absolute;
+                bottom: -7px;
+                left: 56px;
+                right: 0;
+                z-index: -1;
+                background: #2fbf71;
+            }
+        }
+    }
+
+    .about-text {
+        margin-bottom: 20px;
+        max-width: 800px;
+        letter-spacing: 2px;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .education {
+        margin-bottom: 20px;
+        max-width: 600px;
+        text-align: center;
+
+        h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    }
+
+    .section {
+        display: flex;
+    }
+
+    .aducation-box {
+        margin: 0;
+        padding: 0;
+        background: #0b0b13;
+        list-style: none;
+
+        li {
+            padding: 20px 20px;
+            border-bottom: 1px solid #555656;
+            min-width: 300px;
+
+            span {
+                background: #2fbf71;
+                color: #fff;
+                font-size: 11px;
+                padding: 1px 8px;
+                display: inline-block;
+                vertical-align: top;
+                letter-spacing: 1px;
+                margin-left: -24px;
+                position: relative;
+                margin-bottom: 9px;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                    border-top: 5px solid #165934;
+                    border-left: 5px solid transparent;
+                }
+            }
+        }
+
+        h6 {
+            color: #fff;
+            margin: 5px 0;
+        }
+    }
+
+    .skills {
+        margin: auto;
+        margin-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 100px;
+
+        h6 {
+            font-size: 14px;
+            margin: 0 0 10px;
+            font-weight: 400;
+            color: #fff;
+        }
+
+        .bar {
+            background-color: #2fbf71;
+        }
+
+        .skill {
+            min-width: 500px;
+            padding-top: 30px;
+        }
+    }
+}

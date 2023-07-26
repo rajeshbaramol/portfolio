@@ -1,0 +1,113 @@
+.contact-container {
+    background: #10101a;
+    color: #fff;
+    /* Set text color to white for better contrast */
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        /* Ensure text appears above pseudo-elements */
+        display: inline-block;
+        /* To keep ::before and ::after on the same line */
+        padding: 0 10px;
+        /* Add some padding for visual spacing */
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            width: 60px;
+            background: #2fbf71;
+            height: 1px;
+        }
+
+        &::after {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -7px;
+            left: 56px;
+            right: 0;
+            z-index: -1;
+            background: #2fbf71;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        display: flex;
+        margin: auto;
+        padding: 10px;
+        width: 800px;
+
+        .contact-info {
+            background: #0b0b13;
+            padding: 30px;
+            // margin: auto;
+            max-width: 300px;
+        }
+
+        .contact-form {
+            background: #0b0b13;
+            padding: 30px;
+            margin: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            .form-group {
+                margin-bottom: 20px;
+
+                label {
+                    font-weight: bold;
+                }
+
+                input,
+                textarea {
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    width: 100%;
+                    font-size: 16px;
+                }
+
+                textarea {
+                    resize: vertical;
+                }
+            }
+
+            button {
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+
+
+}

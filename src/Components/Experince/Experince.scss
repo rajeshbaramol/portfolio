@@ -1,0 +1,99 @@
+.experince {
+    background: #10101a;
+    color: #fff;
+    /* Set text color to white for better contrast */
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        /* Ensure text appears above pseudo-elements */
+        display: inline-block;
+        /* To keep ::before and ::after on the same line */
+        padding: 0 10px;
+        /* Add some padding for visual spacing */
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            width: 60px;
+            background: #2fbf71;
+            height: 1px;
+        }
+
+        &::after {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -7px;
+            left: 56px;
+            right: 0;
+            z-index: -1;
+            background: #2fbf71;
+        }
+    }
+
+    .experience-item {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+        margin-top: 15px;
+        background: #0b0b13;
+        padding: 10px;
+        letter-spacing: 2px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+
+        // Loop through each item and apply delay
+        $item-count: 4; // Adjust this number based on the number of experience items you have
+
+        @for $i from 1 through $item-count {
+            &:nth-child(#{$i}) {
+                transition-delay: 500ms * $i;
+            }
+        }
+
+        &.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h4 {
+            color: #fff;
+            font-weight: 500;
+            font-size: 20px;
+        }
+        label {
+            font-size: 13px;
+            margin-bottom: 12px;
+            
+        }
+        .rb-time {
+            display: inline-block;
+            padding: 5px 10px;
+            color: #fff;
+            background: #2fbf71;
+            font-size: 10px;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}

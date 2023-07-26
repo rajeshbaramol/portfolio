@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-family: "Rubik", monospac;
+    line-height: 1.7;
+    font-size: 15px;
+    font-weight: 300;
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #FFF;
+        background-image: -webkit-gradient(linear,
+                40% 0%,
+                75% 84%,
+                from(#4D9C41),
+                to(#19911D),
+                color-stop(.6, #54DE5D))
+    }
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}

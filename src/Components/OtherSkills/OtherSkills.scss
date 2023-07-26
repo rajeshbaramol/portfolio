@@ -1,0 +1,75 @@
+.other {
+    background: #10101a;
+    color: #fff;
+    /* Set text color to white for better contrast */
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    line-height: 20px;
+    /* OtherSkills.css */
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+        /* Ensure text appears above pseudo-elements */
+        display: inline-block;
+        /* To keep ::before and ::after on the same line */
+        padding: 0 10px;
+        /* Add some padding for visual spacing */
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+            width: 60px;
+            background: #2fbf71;
+            height: 1px;
+        }
+
+        &::after {
+            content: "";
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -7px;
+            left: 56px;
+            right: 0;
+            z-index: -1;
+            background: #2fbf71;
+        }
+
+
+    }
+
+    p {
+        font-size: 20px;
+        letter-spacing: 2px;
+        padding-bottom: 20px;
+    }
+
+    .chips {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        line-height: 20px;
+    }
+
+    .animated-chip {
+        opacity: 0;
+        transform: translateX(100%);
+        transition: opacity 3s ease, transform 2s ease;
+    }
+
+    .animated-chip.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}

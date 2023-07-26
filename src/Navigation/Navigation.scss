@@ -1,0 +1,96 @@
+.navigation {
+    background: #0c0c14;
+    height: 100vh;
+    position: fixed;
+    min-width: 310px;
+
+    .navigation-body {
+        .profile {
+            margin: auto;
+            height: 250px;
+
+            .avatar-body {
+                background: #2fbf71;
+                border-bottom-left-radius: 20%;
+                border-bottom-right-radius: 80%;
+                padding: 20px;
+                height: 150px;
+
+                .avatar {
+                    border: 3px solid #ffff;
+
+                }
+            }
+
+
+            .text {
+                color: #ffffff;
+                text-align: center;
+                font-weight: bold;
+                text-transform: uppercase;
+                font-size: larger;
+                font-weight: 300;
+                font-size: 14px;
+                letter-spacing: 7px;
+                color: #fff;
+
+                &:hover {
+                    transition: ease all 0.5s;
+                    font-size: 16px;
+                    letter-spacing: 4px;
+                }
+            }
+        }
+
+        .list {
+            flex: 1;
+            color: rgb(209, 207, 207);
+
+            .dividerColor {
+                background-color: rgb(45, 44, 44);
+
+            }
+
+            .MuiListItemButton-root {
+                color: #ffff;
+                transition: ease all 0.5s;
+                text-transform: uppercase;
+
+                .MuiListItemIcon-root {
+                    color: #ffff;
+                    transition: ease all 0.5s;
+                    text-transform: uppercase;
+                }
+
+
+
+                &:hover {
+                    .MuiListItemIcon-root {
+                        color: #17ad0f;
+                    }
+
+                    .MuiListItemText-primary {
+                        color: #17ad0f;
+                        letter-spacing: 2px;
+                        transition: ease all 0.5s;
+                    }
+                }
+            }
+        }
+
+        .contact-links {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 12px 0;
+            color: #fff;
+            display: flex;
+            margin: auto;
+            place-content: center;
+            svg{
+                padding: 10px;
+            }
+        }
+    }
+}
