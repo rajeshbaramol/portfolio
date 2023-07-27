@@ -11,7 +11,7 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
             </div>
             <div className='about-text'>
                 <p>
-                    As a Bengaluru-based Front-end Developer with over 3 years of experience, I specialize in coding and creating web
+                    As a Bengaluru-based Front-end Developer with over 6 years of experience, I specialize in coding and creating web
                     elements that bring exceptional user experiences to life. My expertise lies in crafting responsive and interactive
                     interfaces using HTML, CSS, and JavaScript. I am passionate about staying up-to-date with the latest front-end technologies
                     and best practices to deliver visually appealing and user-friendly web solutions. My goal is to create web elements that

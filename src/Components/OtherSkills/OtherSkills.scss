@@ -73,9 +73,10 @@
 @media (max-width:800px) {
     .other {
         display: grid;
+        overflow-x: auto;
         .animated-chip {
-            opacity: 0;
-            transform: translateX(50%);
+            opacity: 1;
+            transform: translateX(-20%);
             transition: opacity 3s ease, transform 2s ease;
         }
     
