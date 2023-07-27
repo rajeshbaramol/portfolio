@@ -141,4 +141,53 @@
             padding-top: 30px;
         }
     }
+    @media (max-width: 1000px)  {
+        .section {
+            display: grid;
+        }
+    }
+    @media (max-width: 800px)  {
+        .title {
+            h3 {
+                font-size: 18px;
+            }
+
+            &::before {
+                width: 40px;
+            }
+
+            &::after {
+                left: 36px;
+            }
+        }
+
+        .about-text {
+            font-size: 14px;
+        }
+
+        .section {
+            flex-direction: column;
+            display: grid;
+            /* Change to column layout on mobile screens */
+        }
+
+        .aducation-box {
+            li {
+                // min-width: 100%;
+                margin: auto;
+                // margin-bottom: 20px;
+                /* Add some spacing between list items */
+            }
+        }
+
+        .skills {
+            padding-left: 20px;
+            margin: auto;
+            width: 100%;
+            .skill {
+                min-width: auto;
+                padding-top: 15px;
+            }
+        }
+    }
 }

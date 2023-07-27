@@ -18,7 +18,7 @@ export default function Experince(props: IExperinceProps) {
                     item.classList.remove('visible');
                 } else
                     item.classList.add('visible');
-            }, 500 * (index + 1)); // Delay increases with each item
+            }, !showItems ? 500 : 100 * (index + 10)); // Delay increases with each item
 
             itemTimeouts.push(timeoutId);
         });

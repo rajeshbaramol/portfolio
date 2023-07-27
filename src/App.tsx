@@ -13,18 +13,18 @@ export interface IAppProps {
 export function App(props: IAppProps) {
     return (
         <div className='container'>
-            <Grid container>
-                <Grid item md={2}>
+            <div className="main">
+                <div className="nav">
                     <Navigation />
-                </Grid>
-                <Grid item md={10}>
+                </div>
+                <div className="sec">
                     <Home />
-                    <About/>
+                    <About />
                     <Experince/>
                     <OtherSkills />
                     <ContactMe/>
-                </Grid>
-            </Grid>
+                </div>
+            </div>
         </div>
     );
 }

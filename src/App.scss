@@ -23,4 +23,30 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    max-width: 100vw;
+
+    .main {
+        width: 100%;
+        display: flex;
+        max-width: 100vw;
+        flex-wrap: wrap;
+
+        .nav {
+            width: 20%
+        }
+
+        .sec {
+            width: 80%;
+        }
+
+        @media (max-width: 600px) {
+            .nav {
+                width: 0%
+            }
+
+            .sec {
+                width: 100%;
+            }
+        }
+    }
 }

@@ -2,7 +2,8 @@
     background: #0c0c14;
     height: 100vh;
     position: fixed;
-    min-width: 310px;
+    width: 100%;
+    max-width: 20%;
 
     .navigation-body {
         .profile {
@@ -17,11 +18,9 @@
                 height: 150px;
 
                 .avatar {
-                    border: 3px solid #ffff;
-
+                    border: 3px solid #ffffff;
                 }
             }
-
 
             .text {
                 color: #ffffff;
@@ -48,7 +47,6 @@
 
             .dividerColor {
                 background-color: rgb(45, 44, 44);
-
             }
 
             .MuiListItemButton-root {
@@ -61,8 +59,6 @@
                     transition: ease all 0.5s;
                     text-transform: uppercase;
                 }
-
-
 
                 &:hover {
                     .MuiListItemIcon-root {
@@ -88,9 +84,109 @@
             display: flex;
             margin: auto;
             place-content: center;
-            svg{
+
+            svg {
                 padding: 10px;
             }
         }
     }
+
+    // Mobile styles
+    // @media screen and (max-width: 600px) {
+    //   .navigation-body {
+    //     .profile {
+    //       .avatar-body {
+    //         height: 100px;
+    //       }
+
+    //       .text {
+    //         font-size: 12px;
+    //         letter-spacing: 5px;
+    //       }
+    //     }
+
+    //     .list {
+    //       .MuiListItemButton-root {
+    //         .MuiListItemIcon-root {
+    //           font-size: 18px;
+    //         }
+
+    //         .MuiListItemText-primary {
+    //           font-size: 14px;
+    //         }
+    //       }
+    //     }
+
+    //     .contact-links {
+    //       svg {
+    //         font-size: 20px;
+    //       }
+    //     }
+    //   }
+    // }
+}
+
+@media (max-width: 1000px) {
+    .navigation {
+        min-width: 33.33%;
+
+        .navigation-body {
+            .list {
+                svg {
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}
+
+.btn-con {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; /* Add overflow to hide overflowing content */
+    padding: 10px 20px;
+    background-color: #2fbf71;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+
+    h1 {
+        font-weight: 600;
+        color: #fff;
+        font-size: 25px;
+        line-height: 1;
+    }
+
+    .toggler-menu {
+        width: 40px;
+        height: 40px;
+        position: sticky;
+        // margin: 0;
+        border-radius: 0;
+        // padding: 0;
+        margin-left: 15px;
+        background: #2fbf71;
+        border: none;
+        margin-left: auto;
+        float: right;
+        right: 5px;
+        position: fixed;
+        color: #ffff;
+    }
+
+
+
+}
+@media (max-width: 600px) {
+  .btn-con {
+    flex-direction: column; /* Stack the elements vertically */
+    align-items: flex-start; /* Align elements to the start of the container */
+    padding: 20px; /* Increase padding for better spacing on mobile */
+  }
+
+  h1 {
+    font-size: 24px; /* Adjust font size for better visibility on mobile */
+    margin-bottom: 10px; /* Add margin for spacing between h1 and button */
+  }
 }

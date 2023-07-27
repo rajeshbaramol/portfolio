@@ -109,5 +109,10 @@
         }
     }
 
-
+    @media (max-width:800px) {
+        .form-container {
+            display: grid;
+            width: auto;
+        }
+    }
 }
