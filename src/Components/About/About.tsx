@@ -34,7 +34,7 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
                         <h6>12th</h6>
                         <p>DVS, Shimoga </p>
                     </li>
-                    <li><span>2019-2010</span>
+                    <li><span>2009-2010</span>
                         <h6>10th</h6>
                         <p>JSS mysore </p>
                     </li>
