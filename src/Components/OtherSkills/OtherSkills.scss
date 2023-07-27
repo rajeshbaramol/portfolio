@@ -76,8 +76,8 @@
         overflow-x: auto;
         .animated-chip {
             opacity: 1;
-            transform: translateX(-20%);
-            transition: opacity 3s ease, transform 2s ease;
+            transform: translateX(-10%);
+            transition: opacity 0.5s ease, transform 3s ease;
         }
     
         .animated-chip.visible {

@@ -5,7 +5,6 @@ export interface IExperinceProps {
 }
 
 export default function Experince(props: IExperinceProps) {
-    const [showItems, setShowItems] = useState(false);
 
     useEffect(() => {
         // Add a delay to show each item one by one
@@ -24,12 +23,8 @@ export default function Experince(props: IExperinceProps) {
         return () => {
             itemTimeouts.forEach((timeoutId) => clearTimeout(timeoutId));
         };
-    }, [showItems]);
-    useEffect(() => {
-        setInterval(() => {
-            setShowItems((pre) => !pre)
-        }, 5000)
     }, []);
+    
     const jsx = React.useMemo(() => <div className='experince' id='experince'>
         <h1>Experience</h1>
         <div className="experience-item">
@@ -41,10 +36,7 @@ export default function Experince(props: IExperinceProps) {
                 code that is well-structured, modular, and follows best practices to
                 ensure readability, maintainability, and performance.
                 Unit test case coverage using Jest and react-testing library: Writing
-                tests to verify the functionality of individual units (components,
-                functions, etc.) of the codebase, using testing frameworks like Jest and
-                react-testing library. This helps catch bugs and ensure that changes to
-                the code don't introduce regressions.
+                tests to verify the functionality of individual units 
 
                 Module observation and performance optimization of components:
                 Analyzing the performance of different modules or components in the

@@ -39,8 +39,8 @@ const Navigation: React.FunctionComponent<INavigationProps> = (props) => {
             <p className='text'>Rajesh Barmol</p>
         </Box>
 
-        <List className='list'>
-            <ListItemButton href="#home">
+        <List className='list' onClick={toggleDrawer(false)}>
+            <ListItemButton href="#home" >
                 <ListItemIcon>
                     <HomeIcon />
                 </ListItemIcon>
@@ -83,8 +83,8 @@ const Navigation: React.FunctionComponent<INavigationProps> = (props) => {
         </Box>
     </Box></div>, []);
     return < >{isMobile ? (<>
-    <div className='btn-con'>
-        <button className='toggler-menu' onClick={() => setAnchor(true)}><ListIcon /></button>
+        <div className='btn-con'>
+            <button className='toggler-menu' onClick={() => setAnchor(true)}><ListIcon /></button>
         </div>
         <SwipeableDrawer
             anchor="left"
