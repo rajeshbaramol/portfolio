@@ -55,7 +55,7 @@ const OtherSkills: React.FunctionComponent<IOtherSkillsProps> = (props) => {
             <h1>Tech Stack</h1>
             <p className="subtitle">Here are some of the technologies I work with:</p>
             {chipsData.map((group, groupIndex) => (
-                <Stack key={groupIndex} direction="row" spacing={1}>
+                <Stack key={groupIndex} direction="row" spacing={1} style={{ flexWrap: 'wrap',placeItems:'center' }}>
                     {group.map((chip, chipIndex) => (
                         <Chip
                             key={chipIndex}

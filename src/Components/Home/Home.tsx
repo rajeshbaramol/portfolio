@@ -66,7 +66,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
               <Avatar
                 alt='Rajesh Barmol'
                 src='https://media.licdn.com/dms/image/D5603AQGr-ZDDdA44TQ/profile-displayphoto-shrink_800_800/0/1686858115322?e=1695859200&v=beta&t=XNLtKcmNpPTDvprb5EYu3_doerWMjxuivl8ZUFaB5JA'
-                sx={{ width: isMobile ? 200 : 300, height: isMobile ? 200 : 300, margin: 'auto' }}
+                // sx={{ width: isMobile ? 200 : 300, height: isMobile ? 200 : 300, margin: 'auto' }}
                 className='avatar'
               />
             </Box>

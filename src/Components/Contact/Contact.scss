@@ -53,13 +53,14 @@
         display: flex;
         margin: auto;
         padding: 10px;
-        width: 800px;
+        max-width: 800px;
 
         .contact-info {
             background: #0b0b13;
             padding: 30px;
             // margin: auto;
             max-width: 300px;
+            margin-right: 20px;
         }
 
         .contact-form {
@@ -71,7 +72,7 @@
         form {
             display: flex;
             flex-direction: column;
-
+            padding: 30px;
             .form-group {
                 margin-bottom: 20px;
 
@@ -109,10 +110,23 @@
         }
     }
 
-    @media (max-width:800px) {
+    @media (max-width:1000px) {
         .form-container {
-            display: grid;
+            flex-wrap: wrap;
             width: auto;
+            margin: auto;
+            
+            .contact-info {
+                background: #0b0b13;
+                padding: 30px;
+                margin: auto;
+            }
+            .contact-form {
+                background: #0b0b13;
+                padding: 30px;
+                margin: auto;
+                margin-top: 20px;
+            }
         }
     }
 }

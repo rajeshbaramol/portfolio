@@ -6,8 +6,7 @@ const ContactPage: React.FC = () => {
             <div className='contact-container'>
                 <h1>GET IN TOUCH.</h1>
                 <p>
-                    Feel free to get in touch with me. You can reach out to me using the form below or through my email address or
-                    phone number.
+                Please feel free to reach out to me. Here are my contact details.
                 </p>
                 <div className='form-container'>
                     <div className='contact-info'>

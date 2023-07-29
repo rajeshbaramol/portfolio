@@ -10,6 +10,8 @@
     justify-content: center;
     align-items: center;
     text-align: left;
+    background: rgb( 1,87,97 );
+    // background: linear-gradient(90deg, rgb(107, 107, 108) 0%, rgb(105, 108, 102) 50%, rgb(130, 145, 148) 100%);
 
     .title {
         margin: 0;
@@ -70,10 +72,73 @@
             }
         }
     }
+
+    $avatar-size: 200px; // You can adjust the avatar size if needed
+    $avatar-border-color: #42b983; // Border color
+    $antenna-color: #f39c12; // Antenna color
+
+    // Mixin to create a circular shape
+    @mixin circle($size) {
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+    }
+
+    // SCSS for the avatar
+    .avatar-body {
+        position: relative;
+
+
+
+        // Add styles for the circular avatar
+        @include circle($avatar-size);
+        border: 5px solid $avatar-border-color;
+        background-color: #f0f0f0; // You can change the background color of the avatar here
+
+        .avatar {
+            width: 100%;
+            height: 100%
+        }
+    }
+
+    // SCSS for the antenna
+    .avatar-antenna {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        width: 4px;
+        height: 40px;
+        background-color: $antenna-color;
+        transform-origin: bottom;
+        animation: antennaAnimation 2s infinite;
+    }
+
+    // Keyframes for the antenna animation
+    @keyframes antennaAnimation {
+
+        0%,
+        100% {
+            transform: rotateZ(0);
+        }
+
+        50% {
+            transform: rotateZ(5deg);
+        }
+    }
 }
 
 /* Media queries for responsiveness */
 @media (max-width: 800px) {
+    .avatar-body {
+        width: 100%;
+        margin: auto;
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            margin: auto;
+        }
+    }
 
     .home-container {
 

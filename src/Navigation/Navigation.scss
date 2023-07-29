@@ -2,8 +2,9 @@
     background: #0c0c14;
     height: 100vh;
     position: fixed;
-    width: 100%;
-    max-width: 20%;
+    // width: 100%;
+    // max-width: 20%;
+    width: inherit;
 
     .navigation-body {
         .profile {
@@ -16,9 +17,12 @@
                 border-bottom-right-radius: 80%;
                 padding: 20px;
                 height: 150px;
-
+                width: 100%;
+                max-width: -webkit-fill-available;
                 .avatar {
                     border: 3px solid #ffffff;
+                    width: 100px;
+                    height: 100px;
                 }
             }
 
@@ -132,6 +136,9 @@
         max-width: 50%;
 
         .navigation-body {
+            max-width: -webkit-fill-available;
+            max-width: fit-content;
+
             .list {
                 svg {
                     margin-left: 15px;
@@ -145,7 +152,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    overflow: hidden; /* Add overflow to hide overflowing content */
+    overflow: hidden;
+    /* Add overflow to hide overflowing content */
     padding: 10px 20px;
     background-color: #2fbf71;
     color: #fff;
@@ -179,15 +187,35 @@
 
 
 }
-@media (max-width: 600px) {
-  .btn-con {
-    flex-direction: column; /* Stack the elements vertically */
-    align-items: flex-start; /* Align elements to the start of the container */
-    padding: 20px; /* Increase padding for better spacing on mobile */
-  }
 
-  h1 {
-    font-size: 24px; /* Adjust font size for better visibility on mobile */
-    margin-bottom: 10px; /* Add margin for spacing between h1 and button */
-  }
+@media (max-width: 600px) {
+    .btn-con {
+        flex-direction: column;
+        /* Stack the elements vertically */
+        align-items: flex-start;
+        /* Align elements to the start of the container */
+        padding: 20px;
+        /* Increase padding for better spacing on mobile */
+    }
+
+    h1 {
+        font-size: 24px;
+        /* Adjust font size for better visibility on mobile */
+        margin-bottom: 10px;
+        /* Add margin for spacing between h1 and button */
+    }
+
+    .navigation {
+        .navigation-body {
+            .profile {
+                .avatar-body {
+                    .avatar {
+                        width: 100px;
+                        height: 100px;
+                        margin: 'auto';
+                    }
+                }
+            }
+        }
+    }
 }
