@@ -111,8 +111,9 @@
 
 @media (max-width: 700px) {
     .navigation {
-        min-width: 280px;
-        max-width: 80vw;
+        min-width: 0;
+        width: 84vw;
+        max-width: 320px;
 
         .navigation-body {
             max-width: 100%;
@@ -130,7 +131,7 @@
     position: fixed;
     top: 16px;
     left: 16px;
-    z-index: 1200;
+    z-index: 1300;
 
     .toggler-menu {
         width: 44px;

@@ -103,6 +103,13 @@ const Navigation: React.FunctionComponent<INavigationProps> = (props) => {
             open={anchor}
             onClose={toggleDrawer(false)}
             onOpen={toggleDrawer(true)}
+            PaperProps={{
+                sx: {
+                    width: { xs: '84vw', sm: 320 },
+                    maxWidth: 320,
+                    backgroundColor: '#090f1d',
+                },
+            }}
         >
             {NavBody}
         </SwipeableDrawer></>) : NavBody}

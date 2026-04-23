@@ -47,6 +47,8 @@
     p {
         font-size: 16px;
         margin-bottom: 20px;
+        text-align: center;
+        max-width: 760px;
     }
 
     .contact-actions {
@@ -93,6 +95,29 @@
             margin-right: 20px;
             border: 1px solid rgba(255, 255, 255, 0.08);
             width: 100%;
+            border-radius: 10px;
+
+            p {
+                margin-bottom: 14px;
+                line-height: 1.5;
+                word-break: break-word;
+                text-align: left;
+                font-size: 15px;
+            }
+
+            span {
+                font-weight: 600;
+                color: #dbe7ff;
+            }
+
+            a {
+                color: #a8cbff;
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
         }
 
         .contact-form {
@@ -102,6 +127,7 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
             flex: 1;
             width: 100%;
+            border-radius: 10px;
         }
 
         form {
@@ -124,6 +150,7 @@
                     font-size: 16px;
                     background: #141f35;
                     color: #fff;
+                    box-sizing: border-box;
                 }
 
                 textarea {
@@ -139,6 +166,7 @@
                 border-radius: 5px;
                 font-size: 16px;
                 cursor: pointer;
+                min-height: 44px;
             }
 
             button:hover {
@@ -164,6 +192,34 @@
                 padding: 20px;
                 margin: 0;
             }
+        }
+    }
+
+    @media (max-width: 520px) {
+        p {
+            font-size: 15px;
+        }
+
+        .contact-actions {
+            width: 100%;
+
+            .action-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .form-container {
+            padding: 0;
+
+            .contact-info,
+            .contact-form {
+                padding: 16px;
+            }
+        }
+
+        .contact-container {
+            padding: 16px 12px;
         }
     }
 }

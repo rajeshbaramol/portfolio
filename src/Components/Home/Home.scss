@@ -179,7 +179,7 @@
     }
 
     .home-container {
-        padding: 5rem 1.2rem 2rem;
+        padding: 5rem 1rem 2rem;
 
         .title {
             margin: 0;
@@ -206,7 +206,7 @@
 
             .text {
                 font-size: 14px;
-                min-height: 40px;
+                min-height: auto;
                 text-align: center;
                 margin: auto;
                 max-width: 100%;
@@ -227,16 +227,19 @@
 
 @media (max-width: 480px) {
     .home-container {
+        padding-top: 4.4rem;
+
         .title {
             .name {
                 font-size: 32px;
             }
 
             .button {
-                width: calc(100% - 4px);
+                width: 100%;
                 text-align: center;
                 padding: 0 12px;
                 line-height: 40px;
+                letter-spacing: 0.8px;
             }
 
             .highlight-grid {

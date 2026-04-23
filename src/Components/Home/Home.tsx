@@ -53,7 +53,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
   return (
     <div className='home-container' id='home'>
       <Grid container>
-        <Grid item xs={12} md={6} style={{ order: isMobile ? 2 : 1 }}>
+        <Grid item xs={12} lg={6} style={{ order: isMobile ? 2 : 1 }}>
           <div className='title'>
             <div className='badge-row'>
               <span className='badge'>Open to Leadership Roles</span>
@@ -82,7 +82,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
             </div>
           </div>
         </Grid>
-        <Grid item xs={12} md={6} style={{ order: isMobile ? 1 : 2 }}>
+        <Grid item xs={12} lg={6} style={{ order: isMobile ? 1 : 2 }}>
           <Box className='profile'>
             <Box className='avatar-body'>
               <Avatar
