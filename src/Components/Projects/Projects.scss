@@ -1,0 +1,114 @@
+.projects-container {
+    background: #0b1325;
+    color: #fff;
+    padding: 26px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+        position: relative;
+        text-align: center;
+        margin-bottom: 12px;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            display: inline-block;
+            padding: 0 10px;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                right: 0;
+                width: 60px;
+                background: #2fbf71;
+                height: 1px;
+            }
+
+            &::after {
+                content: "";
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                position: absolute;
+                bottom: -7px;
+                left: 56px;
+                right: 0;
+                z-index: -1;
+                background: #2fbf71;
+            }
+        }
+    }
+
+    .subtitle {
+        text-align: center;
+        color: #cad7ef;
+        max-width: 760px;
+        margin: 0 0 18px;
+    }
+
+    .projects-grid {
+        width: 100%;
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .project-card {
+        background: linear-gradient(170deg, rgba(16, 26, 49, 0.95), rgba(9, 16, 32, 0.96));
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 14px;
+        padding: 16px;
+        transition: transform 0.2s ease, border-color 0.2s ease;
+
+        &:hover {
+            transform: translateY(-4px);
+            border-color: rgba(47, 191, 113, 0.6);
+        }
+
+        .domain {
+            margin: 0 0 8px;
+            font-size: 12px;
+            color: #9fc2ff;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+        }
+
+        h4 {
+            margin: 0 0 10px;
+            font-size: 21px;
+            line-height: 1.25;
+        }
+
+        .description {
+            margin: 0 0 12px;
+            color: #d0ddf5;
+            line-height: 1.6;
+        }
+
+        .stack,
+        .impact {
+            margin: 0 0 8px;
+            font-size: 14px;
+            color: #c8d6f0;
+
+            span {
+                color: #fff;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+@media (max-width: 1000px) {
+    .projects-container .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}

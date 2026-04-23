@@ -25,13 +25,18 @@ interface IState {
     [key: string]: number; // Index signature to allow accessing properties using dynamic keys
   }
 const skillsTarget:IState = {
-    r: 80,
-    j: 80,
-    t: 60,
-    c: 70,
-    h: 70,
+    r: 95,
+    j: 90,
+    t: 92,
+    c: 88,
+    h: 82,
 };
 const About: React.FunctionComponent<IAboutProps> = (props) => {
+    const achievements = [
+        'Received 3 Spotlight Awards for exceptional performance and innovation.',
+        'Led cross-functional initiatives across financial, healthcare, and enterprise platforms.',
+        'Enabled scalable architecture decisions that improved performance and quality.',
+    ];
     const [state, setState] = useState<IState>({
         r: 0,
         j: 0,
@@ -95,12 +100,24 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
             </div>
             <div className='about-text'>
                 <p>
-                    As a Bengaluru-based Front-end Developer with over 6 years of experience, I specialize in coding and creating web
-                    elements that bring exceptional user experiences to life. My expertise lies in crafting responsive and interactive
-                    interfaces using HTML, CSS, and JavaScript. I am passionate about staying up-to-date with the latest front-end technologies
-                    and best practices to deliver visually appealing and user-friendly web solutions. My goal is to create web elements that
-                    not only meet client expectations but also leave a lasting impact on users.
+                    Dynamic Tech Delivery Director and Front-End Developer with proven expertise in React.js,
+                    TypeScript, and modern web technologies. I build scalable products, lead cross-functional
+                    teams, and integrate AI-powered capabilities to improve user experience and business outcomes.
                 </p>
+            </div>
+
+            <Divider />
+
+            <div className='title'>
+                <h3>Impact Highlights</h3>
+            </div>
+            <div className='achievements'>
+                {achievements.map((achievement) => (
+                    <article key={achievement} className='achievement-card'>
+                        <span className='dot' />
+                        <p>{achievement}</p>
+                    </article>
+                ))}
             </div>
 
             <Divider />
@@ -111,8 +128,8 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
             <div className='section'>
                 <ul className='aducation-box'>
                     <li><span>2012-2016</span>
-                        <h6>EEE in BE/Btch</h6>
-                        <p>JNNCE, Shimoga(VTU) </p>
+                        <h6>B.E. in Electrical & Electronics Engineering</h6>
+                        <p>JNNCE, Shimoga (VTU)</p>
                     </li>
                     <li><span>2010-2012</span>
                         <h6>12th</h6>
@@ -128,12 +145,12 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
                     <h3>My skills</h3>
                     <div>
                         <div className='skill'>
-                            <h6>React js</h6>
+                            <h6>React.js / Next.js</h6>
                             <LinearProgressWithLabel value={state.r} variant="determinate" className='bar' />
                         </div>
 
                         <div className='skill'>
-                            <h6>JavaScript</h6>
+                            <h6>JavaScript (ES6+)</h6>
                             <LinearProgressWithLabel value={state.j} variant="determinate" className='bar' />
                         </div>
                         <div className='skill'>
@@ -145,7 +162,7 @@ const About: React.FunctionComponent<IAboutProps> = (props) => {
                             <LinearProgressWithLabel value={state.c} variant="determinate" className='bar' />
                         </div>
                         <div className='skill'>
-                            <h6>Node Js</h6>
+                            <h6>Node.js / APIs</h6>
                             <LinearProgressWithLabel value={state.h} variant="determinate" className='bar' />
                         </div>
                     </div>

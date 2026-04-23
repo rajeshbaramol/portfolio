@@ -8,12 +8,18 @@ const ContactPage: React.FC = () => {
                 <p>
                 Please feel free to reach out to me. Here are my contact details.
                 </p>
+                <div className='contact-actions'>
+                    <a href='mailto:rajeshbaramol@gmail.com' className='action-btn'>Email Me</a>
+                    <a href='https://www.linkedin.com/in/rajesh-bn-7a8854122/' target='_blank' rel='noreferrer' className='action-btn secondary'>Connect on LinkedIn</a>
+                    <a href='/Rajesh_BN_Resume.pdf' download='Rajesh_BN_Resume.pdf' className='action-btn secondary'>Download Resume</a>
+                </div>
                 <div className='form-container'>
                     <div className='contact-info'>
                         <h2>Contact Information</h2>
-                        <p>Address: WJ9P+343, 13th Cross Rd, Teacher's Colony, Jakkasandra, 1st Block Koramangala, HSR Layout 5th Sector, Bengaluru, Karnataka 560034</p>
+                        <p>Location: Bengaluru, India</p>
                         <p>Email: rajeshbaramol@gmail.com</p>
                         <p>Phone: +91 9632192611</p>
+                        <p>Portfolio: https://rajesh-bn-portfolio.netlify.app</p>
                     </div>
                     <form className='contact-form'>
                         <div className='form-group'>

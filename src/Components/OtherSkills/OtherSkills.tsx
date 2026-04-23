@@ -1,72 +1,63 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Chip from '@mui/material/Chip';
-import Stack from '@mui/material/Stack';
 
 interface IOtherSkillsProps { }
 
-const chipsData = [
-    [
-        { label: 'HTML', color: 'primary' },
-        { label: 'CSS', color: 'success' },
-        { label: 'JavaScript (ES6+)', color: 'success' },
-        { label: 'TypeScript', color: 'success' },
-    ],
-    [
-        { label: 'React JS', color: 'primary' },
-        { label: 'Next JS', color: 'success' },
-        { label: 'Node JS', color: 'primary' },
-        { label: 'Express JS', color: 'success' },
-    ],
-    [
-        { label: 'Material UI', color: 'primary' },
-        { label: 'AntD', color: 'success' },
-        { label: 'Kendo UI', color: 'primary' },
-    ],
-    [
-        { label: 'Jest', color: 'primary' },
-        { label: 'React testing library', color: 'success' },
-        { label: 'Emzyme', color: 'primary' },
-    ],
-    [
-        { label: 'Redux', color: 'primary' },
-        { label: 'MobX', color: 'success' },
-        { label: 'Thunk/ Saga', color: 'primary' },
-    ],
-    [
-        { label: 'Sql', color: 'primary' },
-        { label: 'Oracle', color: 'success' },
-        { label: 'Mango', color: 'primary' },
-    ],
-    [
-        { label: 'Webpack', color: 'primary' },
-        { label: 'GIT', color: 'primary' },
-    ],
+interface SkillGroup {
+    title: string;
+    skills: string[];
+}
+
+const skillsData: SkillGroup[] = [
+    {
+        title: 'Frontend',
+        skills: ['React.js', 'Next.js', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3'],
+    },
+    {
+        title: 'UI & State',
+        skills: ['Material UI', 'Tailwind CSS', 'Redux', 'MobX', 'Storybook', 'AG-Grid'],
+    },
+    {
+        title: 'Testing',
+        skills: ['Jest', 'React Testing Library', 'Enzyme'],
+    },
+    {
+        title: 'Backend & Data',
+        skills: ['Node.js', 'Express.js', 'MongoDB', 'PostgreSQL', 'Firebase'],
+    },
+    {
+        title: 'AI & LLM',
+        skills: ['OpenAI API', 'LangChain', 'Codex', 'Opus', 'Sonnet'],
+    },
+    {
+        title: 'DevOps & Cloud',
+        skills: ['Docker', 'Kubernetes (Basics)', 'AWS', 'Azure', 'GitHub Actions', 'Jenkins'],
+    },
 ];
 
 const OtherSkills: React.FunctionComponent<IOtherSkillsProps> = (props) => {
-    const [visibleChips, setVisibleChips] = useState<boolean>(true);
-    useEffect(() => {
-        setInterval(() => {
-            setVisibleChips((pre) => !pre)
-        }, 5000)
-    }, []);
     return (
-        <Stack spacing={1} alignItems="center" id="other" className="other">
+        <section id="other" className="other">
             <h1>Tech Stack</h1>
-            <p className="subtitle">Here are some of the technologies I work with:</p>
-            {chipsData.map((group, groupIndex) => (
-                <Stack key={groupIndex} direction="row" spacing={1} style={{ flexWrap: 'wrap',placeItems:'center' }}>
-                    {group.map((chip, chipIndex) => (
-                        <Chip
-                            key={chipIndex}
-                            label={chip.label}
-                            color={chip.color as any}
-                            className={`animated-chip ${visibleChips ? 'visible' : ''}`}
-                        />
-                    ))}
-                </Stack>
-            ))}
-        </Stack>
+            <p className="subtitle">Core technologies and delivery tooling I work with:</p>
+            <div className="skill-groups">
+                {skillsData.map((group) => (
+                    <article key={group.title} className="skill-group">
+                        <h3>{group.title}</h3>
+                        <div className="chip-row">
+                            {group.skills.map((skill) => (
+                                <Chip
+                                    key={skill}
+                                    label={skill}
+                                    variant="outlined"
+                                    className="skill-chip"
+                                />
+                            ))}
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </section>
     );
 };
 

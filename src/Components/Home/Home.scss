@@ -1,23 +1,19 @@
 .home-container {
-    background-image: url("https://img.freepik.com/free-vector/stylish-glowing-digital-red-lines-banner_1017-23964.jpg?size=626&ext=jpg&ga=GA1.2.214274682.1690358573&semt=ais");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.2), transparent 45%), #090f1d;
+    min-height: 100vh;
     margin: auto;
-    padding: 0;
+    padding: 2rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: left;
-    background: rgb( 1,87,97 );
-    // background: linear-gradient(90deg, rgb(107, 107, 108) 0%, rgb(105, 108, 102) 50%, rgb(130, 145, 148) 100%);
-
     .title {
         margin: 0;
         padding: 0;
         color: #fff;
         width: 500px;
+        max-width: 100%;
         place-self: center;
         margin: auto;
         text-align: left;
@@ -28,8 +24,31 @@
             margin: 0 0 10px;
         }
 
+        .badge-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+
+        .badge {
+            background: rgba(47, 191, 113, 0.2);
+            border: 1px solid rgba(47, 191, 113, 0.5);
+            color: #b4ffd5;
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 999px;
+            letter-spacing: 0.3px;
+        }
+
+        .badge.secondary {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.5);
+            color: #b7d7ff;
+        }
+
         .name {
-            font-size: 40px;
+            font-size: 56px;
             font-weight: 700;
             line-height: 1;
             margin: 0 0 10px;
@@ -42,15 +61,26 @@
         }
 
         .text {
-            font-size: 14px;
-            max-width: 300px;
-            min-height: 40px;
+            font-size: 15px;
+            max-width: 460px;
+            min-height: 52px;
+        }
+
+        .description {
+            color: #d0ddf5;
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
         }
 
         .button {
-            background: #2fbf71;
+            background: linear-gradient(120deg, #2fbf71, #3b82f6);
             color: #ffff;
-            box-shadow: 4px 4px #ffff;
+            box-shadow: 0 12px 20px rgba(47, 191, 113, 0.25);
             padding: 0 25px;
             line-height: 42px;
             position: relative;
@@ -67,14 +97,50 @@
 
             &:hover {
                 background: #ffff;
-                color: #2fbf71;
-                box-shadow: 4px 4px #2fbf71;
+                color: #0b162d;
+                box-shadow: 0 8px 16px rgba(255, 255, 255, 0.25);
+            }
+        }
+
+        .button.ghost {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: none;
+
+            &:hover {
+                border-color: #fff;
+            }
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+            max-width: 540px;
+        }
+
+        .highlight-card {
+            padding: 10px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(12, 22, 40, 0.7);
+            border-radius: 12px;
+
+            h4 {
+                margin: 0;
+                font-size: 18px;
+                color: #fff;
+            }
+
+            p {
+                margin: 4px 0 0;
+                font-size: 12px;
+                color: #9fb0cf;
             }
         }
     }
 
     $avatar-size: 200px; // You can adjust the avatar size if needed
-    $avatar-border-color: #42b983; // Border color
+    $avatar-border-color: #2fbf71;
     $antenna-color: #f39c12; // Antenna color
 
     // Mixin to create a circular shape
@@ -87,13 +153,9 @@
     // SCSS for the avatar
     .avatar-body {
         position: relative;
-
-
-
-        // Add styles for the circular avatar
         @include circle($avatar-size);
         border: 5px solid $avatar-border-color;
-        background-color: #f0f0f0; // You can change the background color of the avatar here
+        background-color: #f0f0f0;
 
         .avatar {
             width: 100%;
@@ -101,30 +163,6 @@
         }
     }
 
-    // SCSS for the antenna
-    .avatar-antenna {
-        position: absolute;
-        top: -30px;
-        left: 50%;
-        width: 4px;
-        height: 40px;
-        background-color: $antenna-color;
-        transform-origin: bottom;
-        animation: antennaAnimation 2s infinite;
-    }
-
-    // Keyframes for the antenna animation
-    @keyframes antennaAnimation {
-
-        0%,
-        100% {
-            transform: rotateZ(0);
-        }
-
-        50% {
-            transform: rotateZ(5deg);
-        }
-    }
 }
 
 /* Media queries for responsiveness */
@@ -141,6 +179,7 @@
     }
 
     .home-container {
+        padding: 5rem 1.2rem 2rem;
 
         .title {
             margin: 0;
@@ -158,7 +197,7 @@
             }
 
             .name {
-                font-size: 40px;
+                font-size: 38px;
                 font-weight: 700;
                 line-height: 1;
                 margin: 0 0 10px;
@@ -170,7 +209,44 @@
                 min-height: 40px;
                 text-align: center;
                 margin: auto;
+                max-width: 100%;
             }
+
+            .badge-row,
+            .cta-row {
+                justify-content: center;
+            }
+
+            .highlight-grid {
+                max-width: 100%;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .home-container {
+        .title {
+            .name {
+                font-size: 32px;
+            }
+
+            .button {
+                width: calc(100% - 4px);
+                text-align: center;
+                padding: 0 12px;
+                line-height: 40px;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .avatar-body {
+            width: 170px;
+            height: 170px;
         }
     }
 }

@@ -1,5 +1,5 @@
 .experince {
-    background: #10101a;
+    background: #0b1325;
     color: #fff;
     /* Set text color to white for better contrast */
     padding: 20px;
@@ -8,6 +8,8 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
 
     h1 {
         font-size: 24px;
@@ -52,14 +54,16 @@
         width: 100%;
         margin-top: 15px;
         background: #0b0b13;
-        padding: 10px;
-        letter-spacing: 2px;
+        padding: 16px;
+        letter-spacing: 0.4px;
+        box-sizing: border-box;
+        max-width: 1050px;
         opacity: 0;
         transform: translateY(20px);
         transition: opacity 0.5s ease, transform 0.5s ease;
 
         // Loop through each item and apply delay
-        $item-count: 4; // Adjust this number based on the number of experience items you have
+        $item-count: 6;
 
         @for $i from 1 through $item-count {
             &:nth-child(#{$i}) {
@@ -75,25 +79,71 @@
         h4 {
             color: #fff;
             font-weight: 500;
-            font-size: 20px;
+            font-size: 22px;
+            margin: 0 0 6px;
         }
         label {
             font-size: 13px;
             margin-bottom: 12px;
-            
+            display: inline-block;
+            color: #9fb0cf;
         }
         .rb-time {
             display: inline-block;
             padding: 5px 10px;
             color: #fff;
-            background: #2fbf71;
-            font-size: 10px;
+            background: linear-gradient(120deg, #2fbf71, #3b82f6);
+            font-size: 11px;
             font-weight: 300;
             text-transform: uppercase;
             letter-spacing: 2px;
             position: absolute;
             top: 0;
             right: 0;
+        }
+
+        ul {
+            margin: 10px 0 0;
+            padding-left: 18px;
+
+            li {
+                margin-bottom: 7px;
+                letter-spacing: 0.5px;
+                line-height: 1.6;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .experince {
+        padding: 20px 12px;
+
+        .experience-item {
+            padding: 14px;
+
+            h4 {
+                font-size: 18px;
+                padding-top: 34px;
+            }
+
+            .rb-time {
+                font-size: 10px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .experince .experience-item {
+        .rb-time {
+            position: static;
+            margin-bottom: 10px;
+        }
+
+        h4 {
+            padding-top: 0;
         }
     }
 }

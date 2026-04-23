@@ -1,17 +1,19 @@
 import * as React from 'react';
-import { Box, List, ListItemButton, ListItemText, ListItemIcon, Divider, Avatar, Button, SwipeableDrawer, useTheme, useMediaQuery } from '@mui/material'
+import { Box, List, ListItemButton, ListItemText, ListItemIcon, Divider, Avatar, SwipeableDrawer, useTheme, useMediaQuery } from '@mui/material'
 import HomeIcon from '@mui/icons-material/Home';
 import ContactEmergencyIcon from '@mui/icons-material/ContactEmergency';
 import DisplaySettingsIcon from '@mui/icons-material/DisplaySettings';
 import ContactsIcon from '@mui/icons-material/Contacts';
-import InstagramIcon from '@mui/icons-material/Instagram';
+import ConstructionIcon from '@mui/icons-material/Construction';
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FacebookIcon from '@mui/icons-material/Facebook';
+import EmailIcon from '@mui/icons-material/Email';
 import ListIcon from '@mui/icons-material/List';
 interface INavigationProps {
 }
 
 const Navigation: React.FunctionComponent<INavigationProps> = (props) => {
+    const profileImage = 'https://unavatar.io/linkedin/rajesh-bn-7a8854122';
     const theme = useTheme(); // Call the function to get the theme object
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const [anchor, setAnchor] = React.useState(false);
@@ -31,7 +33,7 @@ const Navigation: React.FunctionComponent<INavigationProps> = (props) => {
             <Box className='avatar-body'>
                 <Avatar
                     alt="Rajesh Barmol"
-                    src="https://media.licdn.com/dms/image/D5603AQGr-ZDDdA44TQ/profile-displayphoto-shrink_800_800/0/1686858115322?e=1695859200&v=beta&t=XNLtKcmNpPTDvprb5EYu3_doerWMjxuivl8ZUFaB5JA"
+                    src={profileImage}
                     sx={{ width: 100, height: 100, margin: 'auto' }}
                     className="avatar"
                 />
@@ -58,14 +60,21 @@ const Navigation: React.FunctionComponent<INavigationProps> = (props) => {
                 <ListItemIcon>
                     <DisplaySettingsIcon />
                 </ListItemIcon>
-                <ListItemText primary={"Experince"} />
+                <ListItemText primary={"Experience"} />
             </ListItemButton>
             <Divider className={'dividerColor'} />
             <ListItemButton href="#other">
                 <ListItemIcon>
-                    <DisplaySettingsIcon />
+                    <ConstructionIcon />
                 </ListItemIcon>
-                <ListItemText primary={"Other tech Stacks"} />
+                <ListItemText primary={"Tech Stack"} />
+            </ListItemButton>
+            <Divider className={'dividerColor'} />
+            <ListItemButton href="#projects">
+                <ListItemIcon>
+                    <AutoAwesomeIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Featured Work"} />
             </ListItemButton>
             <Divider className={'dividerColor'} />
             <ListItemButton href="#contact">
@@ -77,9 +86,12 @@ const Navigation: React.FunctionComponent<INavigationProps> = (props) => {
             <Divider className={'dividerColor'} />
         </List>
         <Box className='contact-links'>
-            <InstagramIcon />
-            <LinkedInIcon />
-            <FacebookIcon />
+            <a href="mailto:rajeshbaramol@gmail.com" aria-label="email">
+                <EmailIcon />
+            </a>
+            <a href="https://www.linkedin.com/in/rajesh-bn-7a8854122/" target="_blank" rel="noreferrer" aria-label="linkedin">
+                <LinkedInIcon />
+            </a>
         </Box>
     </Box></div>, []);
     return < >{isMobile ? (<>

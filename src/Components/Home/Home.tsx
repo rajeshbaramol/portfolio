@@ -4,7 +4,11 @@ import { Box, Avatar, Grid, useMediaQuery, useTheme } from '@mui/material'
 interface IHomeProps {
 }
 
-const TypingEffect = ({ texts }) => {
+interface TypingEffectProps {
+  texts: string[];
+}
+
+const TypingEffect: React.FC<TypingEffectProps> = ({ texts }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -31,13 +35,19 @@ const TypingEffect = ({ texts }) => {
 };
 
 const Home: React.FunctionComponent<IHomeProps> = (props) => {
+  const profileImage = 'https://unavatar.io/linkedin/rajesh-bn-7a8854122';
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const highlights = [
+    { label: 'Experience', value: '8+ Years' },
+    { label: 'Spotlight Awards', value: '3x Winner' },
+    { label: 'Load Time Gain', value: '25% Faster' },
+  ];
   const texts = [
-    "I'm a Passionate web developer",
-    'Welcome to my portfolio',
-    'Contact me for collaborations',
-    'Thank you for visiting!',
+    "Tech Delivery Director & Front-End Developer",
+    "React.js, TypeScript, Next.js, Node.js",
+    "AI-powered products with modern UX",
+    "Let's build scalable digital platforms",
   ];
 
   return (
@@ -45,18 +55,30 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
       <Grid container>
         <Grid item xs={12} md={6} style={{ order: isMobile ? 2 : 1 }}>
           <div className='title'>
+            <div className='badge-row'>
+              <span className='badge'>Open to Leadership Roles</span>
+              <span className='badge secondary'>Available for Consulting</span>
+            </div>
             {!isMobile && <h2 className='hello'>Hello, I am</h2>}
-            <h1 className='name'>Rajesh barmol</h1>
+            <h1 className='name'>Rajesh BN</h1>
             <div className='text'>
-              {/* Use the TypingEffect component with the array of texts */}
               <TypingEffect texts={texts} />
             </div>
-            {!isMobile && <p className='text'>
-              As a React developer, I create modern websites and web services, delivering exceptional user experiences
-              for clients of all sizes.
-            </p>}
-            <div>
-              <a className='button' href={"https://drive.google.com/file/d/1N9WswD7dxhBPrSUtFvDdUGy52Hrq7gu7/view?usp=sharing"} download='Rajesh_Barmol_CV.pdf'>Download CV</a>
+            <p className='text description'>
+              Dynamic engineering leader with strong expertise in scalable front-end architecture,
+              cross-functional delivery, and AI/LLM-enabled product experiences.
+            </p>
+            <div className='cta-row'>
+              <a className='button' href='/Rajesh_BN_Resume.pdf' download='Rajesh_BN_Resume.pdf'>Download Resume</a>
+              <a className='button ghost' href='https://www.linkedin.com/in/rajesh-bn-7a8854122/' target='_blank' rel='noreferrer'>View LinkedIn</a>
+            </div>
+            <div className='highlight-grid'>
+              {highlights.map((item) => (
+                <div className='highlight-card' key={item.label}>
+                  <h4>{item.value}</h4>
+                  <p>{item.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </Grid>
@@ -65,7 +87,7 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
             <Box className='avatar-body'>
               <Avatar
                 alt='Rajesh Barmol'
-                src='https://media.licdn.com/dms/image/D5603AQGr-ZDDdA44TQ/profile-displayphoto-shrink_800_800/0/1686858115322?e=1695859200&v=beta&t=XNLtKcmNpPTDvprb5EYu3_doerWMjxuivl8ZUFaB5JA'
+                src={profileImage}
                 // sx={{ width: isMobile ? 200 : 300, height: isMobile ? 200 : 300, margin: 'auto' }}
                 className='avatar'
               />

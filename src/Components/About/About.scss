@@ -55,7 +55,7 @@
     .about-text {
         margin-bottom: 20px;
         max-width: 800px;
-        letter-spacing: 2px;
+        letter-spacing: 0.3px;
         text-align: center;
         line-height: 1.6;
     }
@@ -77,6 +77,43 @@
 
     .section {
         display: flex;
+        width: 100%;
+        max-width: 1120px;
+        gap: 24px;
+    }
+
+    .achievements {
+        width: 100%;
+        max-width: 1120px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 18px;
+    }
+
+    .achievement-card {
+        background: #0b0b13;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 16px;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2fbf71;
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+
+        p {
+            margin: 0;
+            line-height: 1.55;
+            color: #d6e2f7;
+        }
     }
 
     .aducation-box {
@@ -88,7 +125,7 @@
         li {
             padding: 20px 20px;
             border-bottom: 1px solid #555656;
-            min-width: 300px;
+            min-width: 260px;
 
             span {
                 background: #2fbf71;
@@ -123,7 +160,8 @@
         margin: auto;
         margin-top: 15px;
         padding-bottom: 15px;
-        padding-left: 100px;
+        padding-left: 20px;
+        width: 100%;
 
         h6 {
             font-size: 14px;
@@ -137,13 +175,17 @@
         }
 
         .skill {
-            min-width: 500px;
+            min-width: 0;
             padding-top: 30px;
         }
     }
     @media (max-width: 1000px)  {
         .section {
             display: grid;
+        }
+
+        .achievements {
+            grid-template-columns: 1fr;
         }
     }
     @media (max-width: 800px)  {
@@ -163,6 +205,7 @@
 
         .about-text {
             font-size: 14px;
+            text-align: left;
         }
 
         .section {
@@ -172,16 +215,16 @@
         }
 
         .aducation-box {
+            width: 100%;
+
             li {
-                // min-width: 100%;
                 margin: auto;
-                // margin-bottom: 20px;
-                /* Add some spacing between list items */
+                min-width: 0;
             }
         }
 
         .skills {
-            padding-left: 20px;
+            padding-left: 0;
             margin: auto;
             width: 100%;
             .skill {
